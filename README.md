@@ -58,15 +58,18 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Support
+## nest Commands
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+```bash
+nest generate module                                      -> creates a module
+nest generate controller OR nest g co                     -> creates a controller
+nest g s                                                  -> creates a service for controller
+nest g class src/coffees/dtos/create-coffee.dto --no-spec -> creates a class for dtos with no specs
+nest g guard common/guards/api-key                        -> creates a class for guards 
+nest g interceptor common/interceptors/wrap-response      -> creates an interceptor
+// class can be used to create the DTOs or Entities
+```
 
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
 
 ## License
 

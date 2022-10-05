@@ -33,7 +33,6 @@ import coffeesConfig from "./config/coffees.config";
         CoffeesService,
         { provide: COFFEE_BRANDS, useFactory: () => ["bru", "nescafe"] }
     ],
-    exports: [CoffeesService],
     // providers: [{ provide: CoffeesService, useClass: CoffeesService}]
     // providers: [{ provide: CoffeesService, useClass: process.env.NODE_ENV === 'dev' ? DevelopmentConfigService : ProductionConfigService }] // Custom Provider values (useClass syntax)
     // providers: [{ provide: CoffeesService, useValue: new MockCoffeeService() }] // Custom Provider values (useValue syntax) - can be used for testing
@@ -47,5 +46,6 @@ import coffeesConfig from "./config/coffees.config";
     //             return coffeeBrands;
     //         }
     //     }], // Using Factory pattern to wait for async operation to complete before loading the module
+    exports: [CoffeesService]
 })
 export class CoffeesModule {}
