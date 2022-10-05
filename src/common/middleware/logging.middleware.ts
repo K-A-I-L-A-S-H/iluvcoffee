@@ -5,7 +5,6 @@ export class LoggingMiddleware implements NestMiddleware {
   use(req: any, res: any, next: () => void) {
     console.time('Request-Response time');
     console.log('Logger middleware');
-
     res.on('finish', () => console.timeEnd('Request-Response time'));
     next();
   }

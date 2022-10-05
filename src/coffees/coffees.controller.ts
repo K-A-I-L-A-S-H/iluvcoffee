@@ -9,6 +9,7 @@ import { REQUEST } from "@nestjs/core";
 import { Request } from "express";
 import { Public } from "../common/decorators/public.decorator";
 import { ParseIntPipe } from "../common/pipes/parse-int.pipe";
+import { Protocol } from "../common/decorators/protocol.decorator";
 
 // Controller scoped pipes, can also use instance like: @UsePipes(new ValidationPipe({options}))
 // @UsePipes(ValidationPipe)
@@ -26,9 +27,10 @@ export class CoffeesController {
     // @SetMetadata('isPublic', true) // set the meta-data to just one end-point, although custom decorator to do this would be better approach
     @Public() // A custom decorator to set the route public
     @Get()
-    findAll(@Query() paginationQuery: PaginationQueryDto) {
+    findAll(@Protocol("https") protocol, @Query() paginationQuery: PaginationQueryDto) {
         // const { limit, offset } = paginationQuery;
         // await new Promise(resolve => setTimeout(resolve, 5000)); // To check if timeout interceptor is working or not
+         console.log(protocol);
         return this.coffeesService.findAll(paginationQuery);
     }
 
