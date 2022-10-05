@@ -10,9 +10,11 @@ import { Request } from "express";
 import { Public } from "../common/decorators/public.decorator";
 import { ParseIntPipe } from "../common/pipes/parse-int.pipe";
 import { Protocol } from "../common/decorators/protocol.decorator";
+import { ApiForbiddenResponse, ApiResponse, ApiTags } from "@nestjs/swagger";
 
 // Controller scoped pipes, can also use instance like: @UsePipes(new ValidationPipe({options}))
 // @UsePipes(ValidationPipe)
+@ApiTags('coffees')
 @Controller('coffees')
 export class CoffeesController {
     constructor(
@@ -23,6 +25,7 @@ export class CoffeesController {
     }
 
     // Method / Route scoped pipe
+    @ApiForbiddenResponse({ description: 'Forbidden' })
     @UsePipes(ValidationPipe)
     // @SetMetadata('isPublic', true) // set the meta-data to just one end-point, although custom decorator to do this would be better approach
     @Public() // A custom decorator to set the route public
