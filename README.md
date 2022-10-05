@@ -67,6 +67,7 @@ nest g s                                                  -> creates a service f
 nest g class src/coffees/dtos/create-coffee.dto --no-spec -> creates a class for dtos with no specs
 nest g guard common/guards/api-key                        -> creates a class for guards 
 nest g interceptor common/interceptors/wrap-response      -> creates an interceptor
+nest g pipe common/pipes/parse-int                        -> creates a class for pipe (used for validation or transformation)
 // class can be used to create the DTOs or Entities
 ```
 
