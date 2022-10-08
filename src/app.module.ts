@@ -9,6 +9,7 @@ import { ConfigModule } from "@nestjs/config";
 import appConfig from "./config/app.config";
 import { APP_PIPE } from "@nestjs/core";
 import { CommonModule } from './common/common.module';
+import {MongooseModule} from "@nestjs/mongoose";
 // import * as Joi from "@hapi/joi";
 
 @Module({
@@ -38,6 +39,7 @@ import { CommonModule } from './common/common.module';
         synchronize: true,
       }),
     }),
+    // MongooseModule.forRoot("mongodb://localhost:27017/iluvcoffee"), // for nosql, eg, mongo
     CoffeesModule,
     CoffeeRatingModule,
     DatabaseModule,
