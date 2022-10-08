@@ -64,7 +64,7 @@ $ npm run test:cov
 nest generate module                                      -> creates a module
 nest generate controller OR nest g co                     -> creates a controller
 nest g s                                                  -> creates a service for controller
-nest g class src/coffees/dtos/create-coffee.dto --no-spec -> creates a class for dtos with no specs
+nest g class src/coffee/dtos/create-coffee.dto --no-spec -> creates a class for dtos with no specs
 nest g guard common/guards/api-key                        -> creates a class for guards 
 nest g interceptor common/interceptors/wrap-response      -> creates an interceptor
 nest g pipe common/pipes/parse-int                        -> creates a class for pipe (used for validation or transformation)

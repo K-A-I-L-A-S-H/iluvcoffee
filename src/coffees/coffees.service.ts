@@ -27,8 +27,8 @@ export class CoffeesService {
         console.log('Coffee Service instantiated');
         // console.log(this.configService.get<string>('DATABASE_HOST', 'localhost'));
         // console.log(this.configService.get('database.host', 'localhost'));
-        // console.log(this.configService.get('coffees'));
-        // console.log(this.configService.get('coffees.foo'));
+        // console.log(this.configService.get('coffee'));
+        // console.log(this.configService.get('coffee.foo'));
         console.log(this.coffeesConfiguration.foo);
     }
 

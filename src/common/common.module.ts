@@ -16,7 +16,7 @@ import { LoggingMiddleware } from "./middleware/logging.middleware";
 export class CommonModule implements NestModule {
     configure(consumer: MiddlewareConsumer) {
         consumer.apply(LoggingMiddleware).forRoutes('*');
-        // consumer.apply(LoggingMiddleware).exclude('coffees').forRoutes('*');
-        // consumer.apply(LoggingMiddleware).forRoutes({ path: 'coffees', method: RequestMethod.GET });
+        // consumer.apply(LoggingMiddleware).exclude('coffee').forRoutes('*');
+        // consumer.apply(LoggingMiddleware).forRoutes({ path: 'coffee', method: RequestMethod.GET });
     }
 }
